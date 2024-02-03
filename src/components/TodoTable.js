@@ -1,22 +1,7 @@
-import logo from './logo.svg';
-import './App.css';
-import TodoRowItem from './components/TodoRowItem';
-
-function App() {
-const todos = [
-  {rowNum: 1, rowDescription: 'Feed puppy', rowAssigned: 'User One'},
-  {rowNum: 2, rowDescription: 'Water Plants', rowAssigned: 'User Two'},
-  {rowNum: 3, rowDescription: 'Make Dinner', rowAssigned: 'User One'}
-]
-
-  return (
-    <div className= 'mt-5 container'>
-      <div className='card'>
-        <div className='card-header'>
-          Your Todo's
-        </div>
-        <div className='card-body'>
-          <table className='table table-hover'>
+function TodoTable(props){
+    
+    return(
+        <table className='table table-hover'>
             <thead>
               <tr>
                 <th scope='col'>#</th>
@@ -39,11 +24,10 @@ const todos = [
               rowAssigned={todos[2].rowAssigned}/>
               
             </tbody>
-          </table>
-        </div>
-      </div>
-    </div>
-  );
+
+        </table>
+    )
+
 }
 
-export default App;
+export default TodoTable
