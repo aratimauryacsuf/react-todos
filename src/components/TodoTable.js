@@ -1,3 +1,5 @@
+import TodoRowItem from "./TodoRowItem"
+
 function TodoTable(props){
     
     return(
@@ -11,17 +13,17 @@ function TodoTable(props){
             </thead>
             <tbody>
               <TodoRowItem
-               rowNum={todos[0].rowNum}
-               rowDescription={todos[0].rowDescription}
-              rowAssigned={todos[0].rowAssigned}/>
+               rowNum={props.todos[0].rowNum}
+               rowDescription={props.todos[0].rowDescription}
+              rowAssigned={props.todos[0].rowAssigned}/>
               <TodoRowItem
-               rowNum={todos[1].rowNum}
-               rowDescription={todos[1].rowDescription}
-              rowAssigned={todos[1].rowAssigned}/>
+               rowNum={props.todos[1].rowNum}
+               rowDescription={props.todos[1].rowDescription}
+              rowAssigned={props.todos[1].rowAssigned}/>
               <TodoRowItem
-               rowNum={todos[2].rowNum}
-               rowDescription={todos[2].rowDescription}
-              rowAssigned={todos[2].rowAssigned}/>
+               rowNum={props.todos[2].rowNum}
+               rowDescription={props.todos[2].rowDescription}
+              rowAssigned={props.todos[2].rowAssigned}/>
               
             </tbody>
 
