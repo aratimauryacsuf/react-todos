@@ -28,7 +28,17 @@ const addTodo=(description, assigned) => {
     setTodos(todos => [...todos, newTodo])
     console.log(todos);
   
-}
+  }
+
+  const deleteTodo = (deleteTodoRowNum) => {
+    let filtered = todos.filter(function(value){
+      return value.rowNum !== deleteTodoRowNum;
+    });
+    setTodos(filtered);
+
+  }
+
+
   return (
     <div className= 'mt-5 container'>
       <div className='card'>
@@ -36,8 +46,8 @@ const addTodo=(description, assigned) => {
           Your Todo's
         </div>
         <div className='card-body'> 
-          <TodoTable todos={todos} />  
-          <button className= 'btn btn-primary' onClick={addTodo} >
+          <TodoTable todos={todos}  deleteTodo={deleteTodo}/>  
+          <button className= 'btn btn-primary'  >
             Add new todo
             </button>
             <NewTodoForm addTodo={addTodo}/>
