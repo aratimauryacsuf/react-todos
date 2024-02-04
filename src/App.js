@@ -12,11 +12,11 @@ const [todos, setTodos] = useState([
   {rowNum: 4, rowDescription: 'Charge Phone', rowAssigned: 'User One'}
 ])
 
-const addTodo=() => {
+const addTodo=(description, assigned) => {
   console.log('Our addTodo btn has been clicked!');
   if(todos.length > 0){
     const newTodo = {
-      rowNum: todos.length+1,rowDescription: 'New Todo', rowAssigned:'User Three'
+      rowNum: todos.length+1,rowDescription: description, rowAssigned:assigned
     };
     setTodos(todos => [...todos, newTodo])
     console.log(todos);
@@ -34,7 +34,7 @@ const addTodo=() => {
           <button className= 'btn btn-primary' onClick={addTodo} >
             Add new todo
             </button>
-            <NewTodoForm/>
+            <NewTodoForm addTodo={addTodo}/>
         </div>
       </div>
     </div>

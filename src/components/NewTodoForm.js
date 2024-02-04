@@ -1,8 +1,16 @@
 import React, {useState} from 'react';
-function NewTodoForm(){
+function NewTodoForm(props){
 
     const [description, setDescription]= useState('');
     const [assigned, setAssigned] = useState('');
+
+    const submitTodo = () => {
+        if(description !== '' && assigned !== ''){
+            props.addTodo(description,assigned);
+            setAssigned('');
+            setDescription('');
+        }
+    }
 
     // const descriptionChange = (event) =>{
     //     console.log('description', event.target.value);
@@ -33,7 +41,12 @@ function NewTodoForm(){
                     onChange={e => setDescription(e.target.value)}
                     value={description}></textarea>
                 </div>
-                <button type='button' className='bt btn-primary mt-3'>Add Todo</button>
+                <button 
+                    type='button' 
+                    className='bt btn-primary mt-3'
+                     onClick={submitTodo}>
+                        Add Todo
+                </button>
             </form>
         </div>
     )
