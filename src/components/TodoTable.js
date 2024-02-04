@@ -15,6 +15,7 @@ function TodoTable(props){
               {
                 props.todos.map(todo =>(
                     <TodoRowItem 
+                    key = {todo.rowNum}
                     rowNum={todo.rowNum}
                     rowDescription={todo.rowDescription}
                     rowAssigned={todo.rowAssigned}

@@ -14,13 +14,19 @@ const [todos, setTodos] = useState([
 
 const addTodo=(description, assigned) => {
   console.log('Our addTodo btn has been clicked!');
+  let rowNum = 0;
   if(todos.length > 0){
+    rowNum = todos[todos.length-1].rowNum +1;
+  }else{
+    rowNum = 1;
+  }
     const newTodo = {
-      rowNum: todos.length+1,rowDescription: description, rowAssigned:assigned
+      rowNum: rowNum,
+      rowDescription: description, 
+      rowAssigned:assigned
     };
     setTodos(todos => [...todos, newTodo])
     console.log(todos);
-  }
   
 }
   return (
