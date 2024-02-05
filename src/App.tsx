@@ -15,7 +15,7 @@ const [todos, setTodos] = useState([
   {rowNum: 4, rowDescription: 'Charge Phone', rowAssigned: 'User One'}
 ])
 
-const addTodo=(description, assigned) => {
+const addTodo=(description: string, assigned: string) => {
   console.log('Our addTodo btn has been clicked!');
   let rowNum = 0;
   if(todos.length > 0){
@@ -33,7 +33,7 @@ const addTodo=(description, assigned) => {
   
   }
 
-  const deleteTodo = (deleteTodoRowNum) => {
+  const deleteTodo = (deleteTodoRowNum: number) => {
     let filtered = todos.filter(function(value){
       return value.rowNum !== deleteTodoRowNum;
     });

@@ -1,6 +1,12 @@
-function TodoRowItem(props){
+import React from "react"
 
-    
+function TodoRowItem(props:{
+    rowNum: number, 
+    rowDescription: string, 
+    rowAssigned: string, 
+    deleteTodo: Function
+}){
+
     return(
      <tr onClick={() => props.deleteTodo(props.rowNum)}>
         <th scope='row'>{props.rowNum}</th>
